@@ -1,0 +1,39 @@
+1 Requirements Checklist & Section 508 Determination (Link to instructions included)
+2a Consolidated Product Listing for IGCE/RFQ/EPL/MI&RR (Instructions included on 2nd worksheet)
+2b Statement of Work (SOW)
+2c Performance Work Statement (PWS)
+2d Statement of Objectives (SOO)
+2e Performance Work Statement-ARRT (DITCO Template)
+2f Automated Requirements Roadmap Tool (ARRT) Instructions
+3 Certification of Non-Personal Services
+4 Quality Assurance Surveillance Plan (QASP)
+5 JELA Waiver
+6 Independent Government Cost Estimate (IGCE) for services
+7a MIPR Template
+7b Certification of Severability and Incremental Funding Plan Information
+8a Evaluation Plan/Color Rating Scheme (Lowest Priced Technically Acceptable Evaluations Only)
+8b Evaluation Plan/Color Rating Scheme (Best Value Evaluations Only)
+8c Source Selection Plan
+9a Standard Acquisition Plan
+9b Combined Acquisition Strategy Acquisition Plan
+9c Streamlined Acquisition Plan
+10a Justification & Approval (J&A) (FAR Part 6 Exceptions (including brand name specifications) for FAR Section 13.5, FAR Part 12 & 15 Acquisitions)
+10b Justification & Approval (J&A) (FAR SubPart 8.4, used for Federal Supply Schedules - Limited Sources including brand name specifications)
+10c Justification & Approval (J&A) (FAR SubPart 16.5, Fair Opportunity)
+10d Justification & Approval (J&A) (FAR Part 6 for FAR Section 19.808 sole source 8(a) Acquisitions)
+10e Justification & Approval (J&A) (FAR Part 16.5, Brand Name)
+10f Limited Sources/Sole Source Rationale (for all requirements under $150K)
+11a DD Form 254 (Internal DISA Customers)
+11b DD Form 254 (External DISA Customers)
+12 Determination of Best Procurement Approach (Direct Acquisition)
+13 Space Waiver Template (only required if at Ft. Meade)
+14a Market Research Report (Services)
+14b Market Research Report (Products or Commercial Services $7M or Less)
+14c Market Research Report (Option Exercise)
+14d Market Research Report ($150K or less)
+15 Memorandum of Instruction for Technical Expert Status Accreditation (TESA)
+16 Request to Exercise Option
+17a Initial/Interim Selection Recommendation Document (SRD) (Best Value Evaluations Only)
+17b Final Selection Recommendation Document (SRD) (Best Value Evaluations Only)
+17c Initial/Interim Selection Recommendation Document (SRD) (Lowest Priced Technically Acceptable Evaluations Only)
+17d Final Selection Recommendation Document (SRD) (Lowest Price Technically Acceptable Evaluations Only)
