@@ -20,3 +20,4 @@ for line in titledata:
 	with open("output.sql", "at") as outfile:
 		outfile.write(replacecount + '\n')
 	outfile.close
+    
