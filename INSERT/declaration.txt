@@ -1,3 +1,0 @@
-DECLARE
-    rec_count PLS_INTEGER;
-BEGIN

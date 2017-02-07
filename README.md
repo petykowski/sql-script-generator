@@ -5,13 +5,13 @@
 What things you need to install the software and how to install them
 
 ```
-py .\csvtosql.py INSERT
+Python 3
 ```
 
 ### Example
 
-Explain what these tests test and why
+Explain
 
 ```
-Give an example
+py .\csvtosql.py INSERT -t TABLENAME -f path/to/file.csv
 ```
