@@ -1,4 +1,4 @@
-# v0.3.1
+# v0.3.2
 
 # Import Resources
 import csv
@@ -13,14 +13,17 @@ parser.add_argument('-f', '--file', nargs=1, help='File path to csv file.', requ
 parser.add_argument('-t', '--table', nargs=1, help='Use this flag to define the name of the table', required=True)
 args = parser.parse_args()
 
+# Set Table Name
+tablename = args.table[0]
+
 # Determine Platform OS
 platform = platform.system()
 
 # Get User Desktop
 if platform == 'Darwin':
-	Filename = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop/output.sql')
+	Filename = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop/output-' + tablename + '.sql')
 elif platform == 'Windows':
-	Filename = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + "\\Desktop\output.sql"
+	Filename = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + '\\Desktop\output-' + tablename + '.sql'
 	
 # Set File Paths
 if platform == 'Darwin':
@@ -35,9 +38,6 @@ if args.command == "INSERT":
 	# Create File
 	with open(Filename, "wt") as outfile:
 		outfile.close
-
-	# Set Table Name
-	tablename = args.table[0]
 	
 	# Get SQL INSERT Script Placeholder
 	sqlplaceholder = open(sqlplaceholderfilepath, "rt")
