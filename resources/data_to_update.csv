@@ -1,0 +1,11 @@
+CLAUSE_KEY,CLAUSE_ID,CLAUSE_NUMBER,CLAUSE_TITLE,CLAUSE_TEXT,SECTION,PROVISION_OR_CLAUSE,PRESCRIPTION,MODIFIED_BY,LAST_MODIFICATION_ON,LOAD_DATE,LAST_UPDATE_DATE,CURRENT_RECORD,DATE_END
+1,1001,746583-23',OVERTIME AND EXPEDITING CHARGES - INQUIRY',Clause text',B',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+2,1002,STANDARD PROVISION - 01',DITCO BASIC AGREEMENT-WEB',Clause text',I',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+3,1003,STANDARD PROVISION - 02',VENDOR/TELECOMMUNICATIONS PROVIDER ACKNOWLEDGEMENT',Clause text',G',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+4,1004,STANDARD PROVISION - 03',QUOTE PREPARATION',Clause text',B',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+5,1005,STANDARD PROVISION - 04',OVERTIME AND EXPEDITING CHARGES - INQUIRY',Clause text',D',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+6,1006,STANDARD PROVISION - 05',OVERTIME AND EXPEDITING CHARGES-ORDER/CIRCUIT DEMAND',Clause text',D',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+7,1007,252.203-7000',Requirements Relating to Compensation of Former DoD Officials.',Clause text',G',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+8,1008,252.203-7002',Requirement to Inform Employees of Whistleblower Rights.',Clause text',B',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+9,1009,252.204-0006',Line Item Specific: Proration.',Clause text',G',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
+10,1010,252.204-7002',Payment for subline items not separately priced.',Clause text',I',0,,,,"TO_DATE('2017/02/06', 'yyyy/mm/dd')",,Y',
