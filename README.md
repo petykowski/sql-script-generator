@@ -5,11 +5,17 @@ CSVtoSQL is a utility to generate different Oracle SQL scripts from data in .csv
 ## Setup
 
 1. Install Python version 3.0 or later.
-
 2. Clone (or download) the CSVtoSQL repository to your working directory.
 
 ```
 git clone https://github.com/spetykowski/sql-script-generator.git
+```
+
+## CSV Format
+
+```
+Number,String,Date
+1,sting’,TO_DATE('2017/01/01', 'yyyy/mm/dd')
 ```
 
 ## Usage
