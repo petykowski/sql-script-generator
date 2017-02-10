@@ -2,6 +2,14 @@
 
 CSVtoSQL is a utility to generate different Oracle SQL scripts from data in .csv files.
 
+## Output
+
+```
+INSERT INTO USERS (ID, Name, Country Code, District, Population) VALUES (1, 'Kabul', 'AFG', 'Kabol', 1780000);
+INSERT INTO USERS (ID, Name, Country Code, District, Population) VALUES (2, 'Qandahar', 'AFG', 'Qandahar', 237500);
+COMMIT;
+```
+
 ## Setup
 
 1. Install Python version 3.0 or later.
@@ -11,20 +19,31 @@ CSVtoSQL is a utility to generate different Oracle SQL scripts from data in .csv
 git clone https://github.com/spetykowski/sql-script-generator.git
 ```
 
-## CSV Format
-
-```
-Number,String,Date
-1,sting’,TO_DATE('2017/01/01', 'yyyy/mm/dd')
-```
-
 ## Usage
 
 ```
 py csvtosql.py INSERT -t TABLENAME -f path/to/file.csv
 ```
 
-## Parameters
+### CSV Format
+The first row of the csv should exactly match the column name of the target table.
+
+```
+ID,Name,Country Code,District,Population
+1,'Kabul','AFG','Kabol',1780000
+2,'Qandahar','AFG','Qandahar',237500
+```
+
+### Supported Data Types
+
+```
+String = 'String'
+Integer = 1
+Decimal = 12.55
+Date = TO_DATE('2017/02/06', 'yyyy/mm/dd')
+```
+
+### Parameters
 CSVtoSQL has a total of 4 parameters (3 required and 1 optional) available.
 
 ```
@@ -38,10 +57,10 @@ command {INSERT} | (required) Currently CSVtoSQL only supports generating INSERT
 
 **via Terminal:**
 ```
-python3 csvtosql.py INSERT -t USERS -f /example/file.csv
+python3 csvtosql.py INSERT -t USERS -f /example/sample.csv
 ```
 
 **via Powershell:**
 ```
-py .\csvtosql.py INSERT -t USERS -f \example\file.csv
+py .\csvtosql.py INSERT -t USERS -f .\example\sample.csv
 ```
