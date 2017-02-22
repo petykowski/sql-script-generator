@@ -1,4 +1,4 @@
-# v0.3.3
+# v0.4
 
 # Import Resources
 import csv
@@ -9,14 +9,19 @@ import platform
 # Configure argparse
 parser = argparse.ArgumentParser(prog='CSVtoSQL', description='CSVtoSQL is a utility to generate different Oracle SQL scripts by referencing .csv files.')
 parser.add_argument('command', choices=['INSERT'], help='Select the type of statement you would like to generate.')
-parser.add_argument('-f', '--file', nargs=1, help='File path to csv file.', required=True)
-parser.add_argument('-t', '--table', nargs=1, help='Use this flag to define the name of the table', required=True)
-parser.add_argument('-l', '--last', nargs=1, help='Limit generation to number of rows defined, starting from end of csv.', default=[0])
+parser.add_argument('-c', '--commit', help='Prohibits CSVtoSQL from appeninding "COMMIT;" command to the end of the script.', action='store_false')
+parser.add_argument('-f', '--file', nargs=1, help='File path to csv file.', metavar='csvfile', required=True)
+parser.add_argument('-l', '--last', nargs=1, metavar='number of row to limit', help='Limit generation to number of rows defined, starting from end of csv.', default=[0])
+parser.add_argument('-t', '--table', nargs=1, metavar='tablename', help='Use this flag to define the name of the table.  (Default: Table Name = Filename without extention)')
 args = parser.parse_args()
 
 # Set User-Defined Arg Variables
-table_name = args.table[0]
-data_to_update = args.file[0]
+if args.table is None:
+	# Sets the table name as the filename without the file extension
+	table_name = os.path.splitext(os.path.basename(args.file[0]))[0]
+else:
+	table_name = args.table[0]
+csv_sql_data = args.file[0]
 limit_generation_by = int(args.last[0])
 
 # Determine Platform Operating System
@@ -42,7 +47,7 @@ if args.command == "INSERT":
 	sql_placeholder.close()
 	
 	# Open CSV and build dictionary
-	with open(data_to_update, newline='') as csvfile:
+	with open(csv_sql_data, newline='') as csvfile:
 		csv_dictionary = csv.DictReader(csvfile)
 		cvs_field_keys = csv_dictionary.fieldnames
 		row_values_list = []
@@ -91,9 +96,10 @@ if args.command == "INSERT":
 				outfile.close
 				
 	# Write INSERT Commit
-	with open(file_name, "at") as outfile:
-		outfile.write('COMMIT;')
-		outfile.close
+	if args.commit:
+		with open(file_name, "at") as outfile:
+			outfile.write('COMMIT;')
+			outfile.close
 	
 	# Print Success To User
 	print('\nCSVtoSQL Completed Sucessfully - Check your desktop for the completed script at output-' + table_name + '.sql')
