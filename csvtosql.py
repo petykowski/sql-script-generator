@@ -1,4 +1,4 @@
-# v0.4
+# v0.5
 
 # Import Resources
 import csv
@@ -8,34 +8,34 @@ import platform
 
 # Configure argparse
 parser = argparse.ArgumentParser(prog='CSVtoSQL', description='CSVtoSQL is a utility to generate different Oracle SQL scripts by referencing .csv files.')
-parser.add_argument('command', choices=['INSERT'], help='Select the type of statement you would like to generate.')
+parser.add_argument('command', choices=['INSERT', 'MERGE'], help='Select the type of statement you would like to generate.')
 parser.add_argument('-c', '--commit', help='Prohibits CSVtoSQL from appeninding "COMMIT;" command to the end of the script.', action='store_false')
 parser.add_argument('-f', '--file', nargs=1, help='File path to csv file.', metavar='csvfile', required=True)
 parser.add_argument('-l', '--last', nargs=1, metavar='number of row to limit', help='Limit generation to number of rows defined, starting from end of csv.', default=[0])
 parser.add_argument('-t', '--table', nargs=1, metavar='tablename', help='Use this flag to define the name of the table.  (Default: Table Name = Filename without extention)')
 args = parser.parse_args()
 
-# Set User-Defined Arg Variables
-if args.table is None:
-	# Sets the table name as the filename without the file extension
-	table_name = os.path.splitext(os.path.basename(args.file[0]))[0]
-else:
-	table_name = args.table[0]
-csv_sql_data = args.file[0]
-limit_generation_by = int(args.last[0])
-
 # Determine Platform Operating System
 operating_system = platform.system()
 
-# Configure OS Specific Variables
-if operating_system == 'Darwin':
-	file_name = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop/output-' + table_name + '.sql')
-	sql_placeholder_file_path = 'INSERT/statement.txt'
-elif operating_system == 'Windows':
-	file_name = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + '\\Desktop\output-' + table_name + '.sql'
-	sql_placeholder_file_path = 'INSERT\statement.txt'
-
 if args.command == "INSERT":
+	
+	# Set User-Defined Arg Variables
+	if args.table is None:
+		# Sets the table name as the filename without the file extension
+		table_name = os.path.splitext(os.path.basename(args.file[0]))[0]
+	else:
+		table_name = args.table[0]
+	csv_sql_data = args.file[0]
+	limit_generation_by = int(args.last[0])
+
+	# Configure OS Specific Variables
+	if operating_system == 'Darwin':
+		file_name = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop/output-' + table_name + '.sql')
+		sql_placeholder_file_path = 'INSERT/statement.txt'
+	elif operating_system == 'Windows':
+		file_name = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + '\\Desktop\output-' + table_name + '.sql'
+		sql_placeholder_file_path = 'INSERT\statement.txt'
 
 	# Create File
 	with open(file_name, "wt") as outfile:
@@ -103,3 +103,37 @@ if args.command == "INSERT":
 	
 	# Print Success To User
 	print('\nCSVtoSQL Completed Sucessfully - Check your desktop for the completed script at output-' + table_name + '.sql')
+
+elif args.command == "MERGE":
+	
+	# Configure OS Specific Variables
+	if operating_system == 'Darwin':
+		file_name = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop/output-script.sql')
+	elif operating_system == 'Windows':
+		file_name = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + '\\Desktop\output-script.sql'
+
+	# Create Merged Script File
+	with open(file_name, "wt") as outfile:
+		outfile.close
+	
+	# Get info about files to be merged
+	folder_path = args.file[0]
+	files_to_merge = os.listdir(folder_path)
+	total_number_of_files = len(files_to_merge)
+	files_merged = 0	
+	
+	for file in files_to_merge:
+		path_to_file = os.path.abspath(folder_path) + '\\' + file
+		file_to_be_merged = open(path_to_file, "rt")
+		file_contents = file_to_be_merged.read()
+		file_to_be_merged.close()
+		
+		with open(file_name, "at") as outfile:
+			outfile.write('/*'+ file + ' */ \n\n' + file_contents + '\n\n\n')
+			outfile.close
+		
+	# Write INSERT Commit
+	if args.commit:
+		with open(file_name, "at") as outfile:
+			outfile.write('COMMIT;')
+			outfile.close
