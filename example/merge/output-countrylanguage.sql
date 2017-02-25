@@ -1,0 +1,10 @@
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (1, 'ABW', 'Dutch', 'T');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (2, 'ABW', 'English', 'F');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (3, 'ABW', 'Papiamento', 'F');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (4, 'ABW', 'Spanish', 'F');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (5, 'AFG', 'Balochi', 'F');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (6, 'AFG', 'Dari', 'T');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (7, 'AFG', 'Pashto', 'T');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (8, 'AFG', 'Turkmenian', 'F');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (9, 'AFG', 'Uzbek', 'F');
+INSERT INTO countrylanguage (ID, CountryCode, Language, IsOfficial) VALUES (10, 'AGO', 'Ambo', 'F');

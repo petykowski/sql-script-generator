@@ -1,0 +1,10 @@
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (1, 'ABW', 'Aruba', 'North America', 'Caribbean');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (2, 'AFG', 'Afghanistan', 'Asia', 'Southern and Central Asia');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (3, 'AGO', 'Angola', 'Africa', 'Central Africa');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (4, 'AIA', 'Anguilla', 'North America', 'Caribbean');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (5, 'ALB', 'Albania', 'Europe', 'Southern Europe');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (6, 'AND', 'Andorra', 'Europe', 'Southern Europe');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (7, 'ANT', 'Netherlands Antilles', 'North America', 'Caribbean');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (8, 'ARE', 'United Arab Emirates', 'Asia', 'Middle East');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (9, 'ARG', 'Argentina', 'South America', 'South America');
+INSERT INTO country (ID, Code, Name, Continent, Region) VALUES (10, 'ARM', 'Armenia', 'Asia', 'Middle East');

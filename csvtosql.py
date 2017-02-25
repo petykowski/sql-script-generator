@@ -1,4 +1,4 @@
-# v0.5
+# v0.5.1
 
 # Import Resources
 import csv
@@ -8,8 +8,8 @@ import sys
 import platform
 
 # Configure argparse
-parser = argparse.ArgumentParser(prog='CSVtoSQL', description='CSVtoSQL is a utility to generate different Oracle SQL scripts by referencing .csv files.')
-parser.add_argument('command', choices=['INSERT', 'MERGE'], help='Select the type of statement you would like to generate.')
+parser = argparse.ArgumentParser(prog='CSVtoSQL', description='CSVtoSQL is a utility to generate different SQL scripts by referencing .csv files.')
+parser.add_argument('command', choices=['INSERT', 'MERGE'], help='INSERT: convert the contents of a csv file(s) to SQL INSERT statement(s). MERGE: convert multiple SQL files into one comprehensive script.')
 parser.add_argument('-c', '--commit', help='Prohibits CSVtoSQL from appeninding "COMMIT;" command to the end of the script.', action='store_false')
 parser.add_argument('-f', '--filepath', nargs=1, help='Path to csv file (for single file process) or directory with multiple csv files (for batch process).', metavar='csvfile', required=True)
 parser.add_argument('-l', '--last', nargs=1, metavar='number of row to limit', help='Limit generation to number of rows defined, starting from end of csv.', default=[0])
